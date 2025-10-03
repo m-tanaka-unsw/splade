@@ -87,49 +87,6 @@ phylo2foliox <- function(ape.tree, elabels = NULL) {
   class(p) <- "foliox"
   return(p)
 }
-## OLD VERSION 
-phylo2foliox_old<- function(ape.tree, elabels=NULL) {
-   edges <- ape.tree$edge
-   taxa <- c(1:length(ape.tree$tip.label)) #map names to integers
-
-   if (is.null(elabels)) { # generate labels if none given
-      L <- nrow(ape.tree$edge)
-      edge.labels <- c(1:L)  # ape's internal numbering 
-   } else {
-      edge.labels <- elabels
-   }
-   I.edges <- c() # list of interior (non-terminal) edges
-   I.edge.labels <- c() # list of labels for non-terminal edges
-
-   address <- rep("",length(taxa))  # list of leaf labels
-   first.vertex <- rep(NA,length(taxa)) # list of current tails 
-
-   for (i in 1:length(edge.labels)) { # go through each edge 
-      if(edges[i,2] %in% taxa) {  # if edge i head found in taxa-number-list
-         address[edges[i,2]] <- edge.labels[i]   # assuming taxa are numbered from 1
-         first.vertex[edges[i,2]] <- edges[i,1]  # first vertex next to leaf
-      } else {
-         I.edges <- rbind(I.edges, edges[i,])
-         I.edge.labels <- c(I.edge.labels,edge.labels[i] )
-      }
-   }
-   ## Go through each leaf
-   for (i in 1: length(taxa)) {
-      query <- first.vertex[i]
-      which <- -1
-      while (which!=0) { # while reference not reached
-         which <- match(query, I.edges[,2], nomatch=0)  # look among head nodes
-         if (which>0) {
-            address[i] <- paste(I.edge.labels[which],address[i],sep="-")
-            query <- I.edges[which,1]
-         }
-      }  
-   }
-   p <- list(name=ape.tree$tip.label, address=address,
-             headv=edge.labels, weight=ape.tree$edge.length)
-   class(p) <- "foliox"
-   return(p)
-}
 
 ##--------------------------------------------------------------------
 #' Convert `foliox` to ape's `phylo` Format with Extra Information
