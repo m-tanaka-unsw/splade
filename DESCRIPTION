@@ -1,0 +1,33 @@
+Package: splade
+Title: Stable Phylogenetic Leaf Address Encoding
+Version: 0.0.1
+Description: This package supports Stable Phylogenetic Leaf Address Encoding (splade). It provides functions to convert a phylogenetic tree to a phylogenetic leaf address encoding (folio). This encoding allows taxa to be added to an existing tree in a stable manner such that the previously defined leaf addresses do not change. A set of addresses (a folio) is extended with weights on edges to form a foliox object. The package contains utilities for manipulating foliox objects. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: ape, stringr, purrr, treeio
+Suggests: testthat
+Author: Mark Tanaka [aut, cre],
+        Ruiting Lan [aut],
+        Andrew Francis [aut], 
+	Monique Vith [aut],
+	Eleanor Chadwick [aut]
+Authors@R: 
+    c(person("Mark", "Tanaka", 
+          role = c("aut", "cre"), 
+          email = "m.tanaka@unsw.edu.au"),
+      person("Ruiting", "Lan", 
+          role=c("aut"),
+          email="r.lan@unsw.edu.au"), 
+      person("Andrew", "Francis", 
+          role=c("aut"),
+          email="a.francis@unsw.edu.au"),
+      person("Monique","Vith", role=c("aut")),
+      person("Eleanor","Chadwick", role=c("aut"))
+      )
+Depends: R (>= 4.2.2-0)
+NeedsCompilation: no
+Packaged: 2025-03-19 06:12:11 UTC; markt
+Maintainer: Mark Tanaka <m.tanaka@unsw.edu.au>

@@ -1,0 +1,11 @@
+
+This directory contains code (and files) to establish the data supplied in the package. 
+
+To regenerate the data, run the shell script; i.e., 
+
+  sh make-and-place-data.sh   
+
+
+Note that this directory does not go into the package because it is
+listed in .Rbuildignore
+
