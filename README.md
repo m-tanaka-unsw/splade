@@ -36,5 +36,5 @@ Conceived and designed by Mark Tanaka, Ruiting Lan and Andrew Francis. Initial i
 
 ### Citation
 
-Tanaka MM, Lan R and Francis AR (2026) Stably encoding phylogenetic trees with folios of leaf addresses. *Journal of Theoretical Biology*, 616, 112265. 
+Tanaka MM, Lan R and Francis AR (2026) Stably encoding phylogenetic trees with folios of leaf addresses. *Journal of Theoretical Biology*, 616: 112265. 
 
